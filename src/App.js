@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, useColorScheme, View } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import ColorSchema from './Utils/ColorsSchema';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -26,7 +26,7 @@ const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: isDarkMode ? ColorSchema.darker : ColorSchema.lighter,
   };
 
   return (
