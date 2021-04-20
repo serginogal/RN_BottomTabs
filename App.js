@@ -7,17 +7,20 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { SafeAreaView, StyleSheet, Text, useColorScheme, View } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator()
+
+const Home = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Home!</Text>
+    </View>
+  );
+}
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -28,7 +31,11 @@ const App = () => {
 
   return (
     <SafeAreaView style={backgroundStyle, styles.container}>
-      <Icon name="ios-person" size={30} color="#4F8EF7" />
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={Home} />
+        </Tab.Navigator>
+      </NavigationContainer>
     </SafeAreaView>
   );
 };
@@ -36,8 +43,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
   },
 });
 
