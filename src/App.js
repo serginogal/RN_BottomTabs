@@ -11,31 +11,18 @@ import { SafeAreaView, StyleSheet, Text, useColorScheme, View } from 'react-nati
 import ColorSchema from './Utils/ColorsSchema';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
-const Tab = createBottomTabNavigator()
-
-const Home = () => {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
+import BottomTabsNavigator from './Navigators/BottomTabsNavigator';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? ColorSchema.darker : ColorSchema.lighter,
+    backgroundColor: isDarkMode ? ColorSchema.darker : ColorSchema.light,
   };
 
   return (
     <SafeAreaView style={backgroundStyle, styles.container}>
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-        </Tab.Navigator>
-      </NavigationContainer>
+     <BottomTabsNavigator />
     </SafeAreaView>
   );
 };
