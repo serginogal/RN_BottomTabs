@@ -7,10 +7,8 @@
  */
 
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, useColorScheme, View } from 'react-native';
-import ColorSchema from './Utils/ColorsSchema';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SafeAreaView, StyleSheet, useColorScheme } from 'react-native';
+import ColorSchema from './Utils/ColorSchema';
 import BottomTabsNavigator from './Navigators/BottomTabsNavigator';
 
 const App = () => {
